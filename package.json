@@ -1,0 +1,16 @@
+{
+  "name": "betanhyspiesapi",
+  "version": "1.0.0",
+  "description": "REST APIs for Betanhys Pie Shop",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ícaro Barboza",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
