@@ -1,4 +1,5 @@
 let pieRepo = require('./repos/pieRepo')
+let errorHelper = require('./helpers/errorHelpers')
 
 //Bring in the Express Server and Create Application
 let express = require('express');
@@ -167,6 +168,15 @@ router.patch('/:id', function (req, res, next) {
 
 //Configure Router so all routes are prefixed with /api/v1
 app.use('/api', router);
+
+//Configure Exception Logger to Console
+app.use(errorHelper.logErrors)
+
+//Configure Client Error Handler
+app.use(errorHelper.clientErrorHandler)
+
+//Configure Catch-All Exception Middleware
+app.use(errorHelper.errorHandler)
 
 //Create Server to listen on port 5000
 var server = app.listen(5000, function () {
